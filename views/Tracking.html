@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+  <script type="text/javascript">
+    window.tailwind.config = {
+      darkMode: ['class'],
+      theme: {
+        extend: {
+          colors: {
+            border: 'hsl(var(--border))',
+            input: 'hsl(var(--input))',
+            ring: 'hsl(var(--ring))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))'
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))'
+            },
+            destructive: {
+              DEFAULT: 'hsl(var(--destructive))',
+              foreground: 'hsl(var(--destructive-foreground))'
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))'
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))'
+            },
+            popover: {
+              DEFAULT: 'hsl(var(--popover))',
+              foreground: 'hsl(var(--popover-foreground))'
+            },
+            card: {
+              DEFAULT: 'hsl(var(--card))',
+              foreground: 'hsl(var(--card-foreground))'
+            },
+          },
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 46.1%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 5.9% 10%;
+        --radius: 0.5rem;
+      }
+      .dark {
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+        --accent: 240 3.7% 15.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --ring: 240 4.9% 83.9%;
+      }
+    }
+    body {
+      /* background-image: url("../images/tracking-image.jpg"); */
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      
+    }
+    .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+  </style>
+</head>
+<body>
+  <div class="video-background">
+    <video autoplay muted loop id="background-video">
+        <source src="../Images/truck3.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+  <div class="min-h-screen flex flex-col">
+    <div class="flex-grow flex items-center justify-center">
+      <div class="p-10 rounded-lg shadow-lg text-center text-black max-w-2xl" style="background-color: rgba(255, 255, 255);">
+        <h1 class="text-3xl font-bold mb-4">CHOOSE YOUR QUALITY DELIVERY OF YOUR CARGO</h1>
+        <p class="mb-6">  
+          Track your shipment easily with TATA Freight System. Enter your tracking ID to check if your shipment is received, in transit, or delivered. Stay informed about the status of your goods at every step of the journey.</p>
+        <div class="flex items-center justify-center space-x-2">
+          <input type="text" id="trackingNumber" placeholder="Enter your tracking number" class="p-3 rounded-l-lg w-64 text-zinc-700" />
+          <button id="trackButton" class="bg-orange-500 text-white p-3 rounded-r-lg hover:bg-orange-600 font-bold">Track Now</button>
+        </div>
+        <div id="trackingStatus" class="mt-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('trackButton').addEventListener('click', async () => {
+      const trackingNumber = document.getElementById('trackingNumber').value;
+      const statusDiv = document.getElementById('trackingStatus');
+      
+      if (!trackingNumber) {
+        statusDiv.textContent = "Please enter a tracking number.";
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/track-order?trackingNumber=${trackingNumber}`);
+        const data = await response.json();
+
+        if (response.ok) {
+          statusDiv.textContent = `Status: ${data.status}`;
+        } else {
+          statusDiv.textContent = data.message || "An error occurred while tracking.";
+        }
+      } catch (error) {
+        console.error('Error tracking order:', error);
+        statusDiv.textContent = "An error occurred while tracking.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Registration</title>
+    <link rel="stylesheet" href="../css/order.css">
+</head>
+<body>
+    <div class="container">
+        <!-- <img class="logo" src="../public/Images/logo.png" alt="logo"> -->
+        <div class="button">
+            <button class="btn" type="button" onclick="window.location.href='../views/Dashboard.html'">Home</button>
+            <button class="btn" type="button" onclick="window.location.href='../views/truck.html'">Truck</button>
+            <button class="btn" onclick="window.location.href='../views/order.html'" id="home">Order</button>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="inner-container">
+            <div class="order-list">
+                <style>
+                    table, th, td {
+                        border:1px solid black;
+                        border-collapse: collapse;
+                        padding: 10px;
+                    }
+                </style>
+                <h1>Order List</h1>
+                <table id="orderTable">
+                    <thead>
+                        <tr>
+                            <th>order_id</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Weight</th>
+                            <th>Distance</th>
+                            <th>Cost</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/order.js"></script>
+</body>
+</html>

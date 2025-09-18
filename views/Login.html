@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tata Freight System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <section class="login-section">
+        <div class="container">
+            <div class="login-form">
+                <div class="video-background">
+                    <video autoplay muted loop id="background-video">
+                        <source src="../Images/truck3.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+                <h1 class="login-title">Welcome to Tata Freight System</h1>
+                <p class="login-subtitle">Please select your role to continue</p>
+                <div class="role-selection">
+                    <button class="role-btn" id="truck-owner-btn">Truck Owner</button>
+                    <button class="role-btn" id="user-btn">User</button>
+                </div>
+                <form id="login-form" class="hidden">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn login-btn">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="../js/login.js"></script>
+</body>
+</html>

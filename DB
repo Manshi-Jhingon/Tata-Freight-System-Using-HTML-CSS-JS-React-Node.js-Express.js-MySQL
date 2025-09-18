@@ -1,0 +1,42 @@
+create database tata_DB;
+use tata_DB;
+
+CREATE TABLE users (
+id INT AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(255) NOT NULL,
+lastname VARCHAR(255) NOT NULL,
+contact VARCHAR(50) NOT NULL,
+address TEXT NOT NULL,
+email VARCHAR(255) NOT NULL,
+username VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE orders (order_id VARCHAR(255) ,
+name VARCHAR(255) NOT NULL,
+address TEXT NOT NULL,
+phone VARCHAR(20) NOT NULL,
+email VARCHAR(255) NOT NULL,
+item VARCHAR(255) NOT NULL,
+quantity INT NOT NULL,
+weight FLOAT,
+distance FLOAT,
+cost DECIMAL(10, 2) NOT NULL,
+status VARCHAR(50) DEFAULT 'Pending'
+);
+
+
+CREATE TABLE trucks(
+id int NOT NULL AUTO_INCREMENT,
+truck_number varchar(255) NOT NULL,
+truck_type varchar(255) NOT NULL,
+truck_capacity varchar(255) NOT NULL,
+truck_model varchar(255) NOT NULL,
+truck_owner varchar(255) NOT NULL,
+truck_owner_contact varchar(255) NOT NULL,
+truck_driver varchar(255) NOT NULL,
+truck_driver_contact varchar(255) NOT NULL,
+truck_status varchar(255) NOT NULL,
+PRIMARY KEY (`id`)
+)

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Registration</title>
+    <link rel="stylesheet" href="../css/Truck.css">
+</head>
+<body>
+    <div class="container">
+        <!-- <img class="logo" src="../Images/logo1.png" alt="logo"> -->
+        <div class="button">
+            <button class="btn" type="button" onclick="window.location.href='../views/Dashboard.html'">Home</button>
+            <button class="btn" type="button" id="home" onclick="window.location.href='../views/truck.html'">Truck</button>
+            <button class="btn" onclick="window.location.href='../views/order.html'">Order</button>
+        </div>
+    </div>
+
+    <div class="form">
+        <div class="Registration">
+            <h1 class="Tital">Truck Registration</h1>
+            <form id="truckForm">
+                <input type="text" id="truckNumber" placeholder="Truck Number" required>
+                <input type="text" id="truckType" placeholder="Truck Type" required>
+                <input type="text" id="truckCapacity" placeholder="Truck Capacity" required>
+                <input type="text" id="truckModel" placeholder="Truck Model" required>
+                <input type="text" id="truckOwner" placeholder="Truck Owner" required>
+                <input type="text" id="truckOwnerContact" placeholder="Truck Owner Contact" required>
+                <input type="text" id="truckDriver" placeholder="Truck Driver" required>
+                <input type="text" id="truckDriverContact" placeholder="Truck Driver Contact" required>
+                <input type="text" id="truckStatus" placeholder="Truck Status" required>
+                <button class="btn1" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/Truck.js"></script>
+</body>
+</html>
